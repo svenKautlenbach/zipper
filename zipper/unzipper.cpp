@@ -276,7 +276,7 @@ public:
 
     int extractToStream(std::ostream& stream, ZipEntry& info)
     {
-        int err = unzOpenCurrentFilePassword(m_zf, m_outer.m_password.c_str());
+        int err = unzOpenCurrentFile(m_zf);
         if (UNZ_OK != err)
         {
             std::stringstream str;
